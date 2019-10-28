@@ -1,1 +1,121 @@
+    Ko protu patstāvīgi izdarīt ar Raspberry PI šobrīd?(pa soļiem)
+1)Pieslēgties Raspberry PI no sava datora PuTTY (ierakstot IP adress no ierīces, ar kuru pieslēdzos)
+2)Piereģistrēt sevi PuTTY ar Raspberry PI
+3)Pieslēgties PuTTY internetam (wi-fi), kuram gribu (ierakstot savu vārdu, paroli, iesauku un internetu(kur ierakstu interneta vārdu un paroli)) 
+4)Ar Raspberry PI PuTTY var ierakstīt kodu jeb skriptu. Programmēt vai rakstīt to pašu skriptu (nano tests.py) un pārbaudīt vai darbojas(python3 tests.py)
 
+    Ko neprotu patstāvīgi izdarīt ar Raspberry PI (precīzi nosaukt)
+1)Uzprogrammēt pareizi kodu
+
+    Kas jāņem vērā programmējot Rpi skriptus?! Ar ko tas atšķiras no Arduino programmēšanas 
+1) Lai skripts būtu pareizi uzrakstīts,piemēram, lai nav nekādu sintakšu kļūdu
+print("Hello, World!")
+Hello, World!                                                     (tab/space).
+2) Viņus ir sākumā jāpārbauda, vai vispār darbojas, pēc kā, ja darbojas, tad var darbināt skriptu.(2 rindā teikts kā to dara)
+3) Ka kodam ir jābūt pēc iespējas īsākam.
+
+    Ar ko tas atšķiras no Arduino programmēšanas?
+1) Ka, Rpi var skriptus rakstīt PuTTY. Tāpēc, iespējams, īsākus nekā Arduino.
+2)Arduino - Izveido kodu un pēc tam piespraud USB no datora pie Arduino
+Raspberry PI - Piespraud ar USB Raspberry pie Arduino, un tad sāc iet kodēt
+3) Katram programmēšanas valodu daudzums
+Raspberry PI - Scratch, Python, C, Java, Perl u.t.t. 
+Arduino Nano - C/C++
+4)Raspberry programmēšanā kodē to, ko var no *mini datora* dabūt ārā, tas būtu visvisādas programmatūriskas lietotajprogrammas
+  Arduino Nano programmēšanā kodē to, kas domāts vairāk priekš aparatūras *hardware*, smagākiem objektiem.
+  
+    Apraksti un skaidro kas ir...
+1) Random metode - Metode, kur izveido un randomizē skaitli(ļus), kas visbiežāk tiek izmantots skriptos. Bet vārdus arī ir iespējams randomizēt.
+Piemērs -
+import random
+
+print(random.randrange(1,10)) 
+ #un viens līdz desmit skaiļiem var būt randomizēts
+ 
+ 2) LISTE - ir saraksts vai kolekcija, kas ir sakārtots pēc mainīgajiem un kuru izmanto ar kvadrātiekavām.
+Piemērs - 
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+  #un parādīs, kas šajā kolekcijā ir ierakstīts, kas būtu apple, banana, cherry
+  
+  3) input() funcija - Funkcija, kas ļauj ievadīt mainīgo, lai sanāktu sakarīgs teksts.
+  Piemērs -
+print('Ievadi savu vardu:')
+x = input()
+print('Hello, ' + x) 
+#kad ievadi vārdi, tad teksts pasaka ''Hello vārds''
+
+  4) str - Vārds vai burts, kuru ieskauj pēdiņās
+  Piemērs - 
+print("Hello")
+print('Hello')
+
+  5) int - Skaitlis ir vesels skaitlis, pozitīvs vai negatīvs, bez decimāldaļām, neierobežotu garumu.
+  Piemērs - 
+x = 1
+y = 35656222554887711
+z = -3255522
+
+print(type(x))
+print(type(y))
+print(type(z)) 
+#viņi visi būs int skaitļi, jo ir veseli
+  
+  6) Metožu definīcija - Jeb funkcijas, kas saucās arī kā Pitona apakšprogrammu, kuru definē ar def. Tas ļauj veikt vairākkārt vienu un to pašu uzdevumu, ar to pašu skriptu, kas ir pierakstīts.
+ Piemērs -
+def nosaukums(argumenti):
+funkcijas operatori
+return rezultāts
+
+  7) exit() funckija - Funckija, kas ir domāts, lai varētu iziet no programmas(PuTTY), kuru, ievadot šo komdandu, paaugstinās SystemExit izņēmumu, kas ļauj tīrīšanas funkcijām darboties.
+  8) if - Atslēgvārds vai nosacījums ,kur starp diviem mainīgajiem ir taisnība
+  Piemērs - 
+a = 69
+b = 666
+if b > a:
+  print("b is greater than a")
+  
+  9) elif - Atslēgvārds vai nosacījums, ja strap diviem mainīgajiem nav bijusi taisnība.
+  Piemērs - 
+a = 213
+b = 213
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+  
+ 10) Else - Atslēgvārds vai nosacījums, kuru izmanto ja pārējie abi (else, elif) neder pēc konteksta
+ Piemērs -
+a = 202
+b = 35
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+    
+    Sava izstrādā skripta apraksts
+Vēlējos izveidot skriptu ar visiem 5 līmeņiem, bet neiznāca. Tāpēc paņēmu skriptu no *https://inventwithpython.com/invent4thed/chapter8.html*, kurā bija jālabo daudz kļūdu.
+Skripts jeb kods ir paredzēts priekš Hangman spēles jeb Karātava *https://www.speles.org/speles/bende/*. Tur ir iekļauts 1 līmenis. 
+Sanāca kaut kas, skripts ar vienu līmeni.
+
+    Papildus funkcionalitāti ko varētu iekļaut
+Pirmkārt, kodu priekš 5 līmeņiem. 
+Pēc tā varētu laika limitu. Piemēram - 90 sekundes laika, lai izpildītu 5 līmeņus. Un pēc katra līmeņa izpildes kādi 10 sekundes papildus laiku pieliktu.
+Punktu skaits. Ja spēlē vairāki spēlētāji. Un tie kuri izpilda pēc iespējas ātrāk, tie tiek pie vairāk punktiem.
+
+    Pašvērtējums par darbu
+Teiktu, 4. Jo:
+1) Nav 5 līmeņi(tikai 1)
+2) Nav iegājis galvā kā skriptot pareizi
+3) Skripts bija ņemts no interneta vietnes (redzams 99 rindā)
+4) Iemācījos terminus, kas saistīts ar python. 
+
+    Cik daudz pastāvīga darba esi veltījis projekta izstrādē.
+Vairāk būtu veltījis tam, lai iemācītos ko katrs termins nozīmē nekā pašu kodu rakstīt.
+
+ 
+ 
+ 
+ 
